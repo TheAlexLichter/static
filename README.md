@@ -1,0 +1,1 @@
+This is my repo which hosts all my public static files, commonly used for [talks](https://www.lichter.io/speaking/)
