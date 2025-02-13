@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '0 0 * * *'
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   update-sponsors:
@@ -20,10 +20,11 @@ jobs:
         with:
           node-version: lts/*
 
-      - run: corepack enable && pnpm i
+      - run: npm i -fg corepack && corepack enable
+      - run: pnpm i
 
       - name: Update sponsors
-        run: npm run build
+        run: pnpm run build
         env:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
           SPONSORKIT_GITHUB_LOGIN: TheAlexLichter
