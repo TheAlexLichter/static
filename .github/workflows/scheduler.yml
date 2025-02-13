@@ -26,7 +26,7 @@ jobs:
       - name: Update sponsors
         run: pnpm run build
         env:
-          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
+          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
           SPONSORKIT_GITHUB_LOGIN: TheAlexLichter
 
       - name: Commit
@@ -37,4 +37,4 @@ jobs:
           message: 'chore: update sponsors.svg [ci skip]'
           add: "sponsors.*"
         env:
-          GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
